@@ -57,9 +57,11 @@ function start() {
         })
         .catch((e) => {
             console.error(e);
-            if (e.code === 1) {
+            if (e === 1) {
                 //发现存在图片获取失败的问题，增加reload页面
-                location.reload();
+                setTimeout(function(){
+                    location.reload();
+                }, 3000)
             }
         });
 }
